@@ -47,7 +47,7 @@ class Eksekusi extends Config {
         }
     }
     static isValid (validasi){
-        return this.validasi !== "" && this.validasi !== null ? validasi : 0
+        return validasi > 0 ? validasi : 0
     }
 }
 let namaSenjata, darah, damage, delay;
