@@ -6,7 +6,9 @@ class Config {
         this._delay = null;
     }
     get senjata (){
-        this._senjata = _senjata
+        // Getter seharusnya berisi return property yang ditujukan.
+        // Bukan penugasan
+        return this._senjata;
     }
     set senjata(senjata){
         return this._senjata = senjata
