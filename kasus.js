@@ -6,7 +6,7 @@ class Config {
         this._delay = null;
     }
     get senjata (){
-        this._senjata
+        return this._senjata
     }
     set senjata(senjata){
         this._senjata = senjata
