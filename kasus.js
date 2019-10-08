@@ -48,10 +48,8 @@ class Eksekusi extends Config {
             this.darah()
         }
     }
-    isValid (validasi){
-        // Kalo static method seharusnya tidak memanggil property sendiri
-        // Kalo memanggil property sendiri method tersebut bukan lagi static melainkan self method
-        return this.validasi !== "" && this.validasi !== null ? validasi : 0
+    static isValid (validasi){
+        return validasi > 0 ? validasi : 0
     }
 }
 let namaSenjata, darah, damage, delay;
