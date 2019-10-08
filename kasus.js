@@ -6,7 +6,9 @@ class Config {
         this._delay = null;
     }
     get senjata (){
-        this._senjata = _senjata
+        // Getter seharusnya berisi return property yang ditujukan.
+        // Bukan penugasan
+        return this._senjata;
     }
     set senjata(senjata){
         return this._senjata = senjata
@@ -46,7 +48,9 @@ class Eksekusi extends Config {
             this.darah()
         }
     }
-    static isValid (validasi){
+    isValid (validasi){
+        // Kalo static method seharusnya tidak memanggil property sendiri
+        // Kalo memanggil property sendiri method tersebut bukan lagi static melainkan self method
         return this.validasi !== "" && this.validasi !== null ? validasi : 0
     }
 }
