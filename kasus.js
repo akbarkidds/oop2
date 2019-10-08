@@ -18,7 +18,7 @@ class Config {
                 document.getElementById("winner").style.display = "block"
                 clearInterval(time)
             } else {
-            this._darah = parseInt(this._darah)-(parseInt(this._damage)*0.05)
+                this._darah = parseInt(this._darah)-(parseInt(this._damage)*0.05)
                 document.getElementById("darah").style.width = `${this._darah}%`
             }
         }, this._delay*1000);
@@ -52,16 +52,23 @@ class Eksekusi extends Config {
 }
 let namaSenjata, darah, damage, delay;
 let senjata = prompt("Silahkan Pilih Senjata\nMasukan Nomor Senjata :\n1. AKM\n2. Sniper")
-if(Eksekusi.isValid(senjata)) {
-    if(senjata == 1 || senjata == "akm"){
-        namaSenjata = "AKM-47" , darah = 100, damage = 300 ,delay = 3
-        let eksekusi = new Eksekusi (namaSenjata, darah, damage, delay)
-        eksekusi.mainkan()
-        console.log(eksekusi)
-    } else if(senjata == 2 || senjata == "Sniper"){
-        namaSenjata = "Baretta" , darah = 100, damage = 600 ,delay = 8
-        let eksekusi = new Eksekusi (namaSenjata, darah, damage, delay)
-        eksekusi.mainkan()
-        console.log(eksekusi)
+function exeMain(senjata){
+    if(Eksekusi.isValid(senjata)) {
+        if(senjata == 1 || senjata == "akm"){
+            namaSenjata = "AKM-47" , darah = 100, damage = 300 ,delay = 3
+            let eksekusi = new Eksekusi (namaSenjata, darah, damage, delay)
+            eksekusi.mainkan()
+        } else if(senjata == 2 || senjata == "Sniper"){
+            namaSenjata = "Baretta" , darah = 100, damage = 600 ,delay = 8
+            let eksekusi = new Eksekusi (namaSenjata, darah, damage, delay)
+            eksekusi.mainkan()
+        } else {
+            senjata = prompt("Error: \nData Yang Anda Masukan Tidak Valid\n\nSilahkan Pilih Senjata\nMasukan Nomor Senjata :\n1. AKM\n2. Sniper")
+            exeMain(senjata)
+        }
+    } else {
+        senjata = prompt("Error: \nData Yang Anda Masukan Tidak Valid\n\nSilahkan Pilih Senjata\nMasukan Nomor Senjata :\n1. AKM\n2. Sniper")
+        exeMain(senjata)
     }
 }
+exeMain(senjata);
