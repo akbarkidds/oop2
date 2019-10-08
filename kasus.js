@@ -35,7 +35,7 @@ class Eksekusi extends Config {
     }
     mainkan(){
         if(this.isValid(this._damage)){
-            if(this._senjata == "akm") document.getElementById("pahlawan").innerHTML = `<img src="./images/akm.gif" style="transform: rotateY(180deg); width: 100%;">`
+            if(this._senjata == "AKM-47") document.getElementById("pahlawan").innerHTML = `<img src="./images/akm.gif" style="transform: rotateY(180deg); width: 100%;">`
             else document.getElementById("pahlawan").innerHTML = `<img src="./images/perang.gif" style="width: 85%; margin-top: 30%;">`
             document.getElementById("pemberontak").innerHTML = `
                 <img src="./images/images.jpg" style="width: 53%; margin-left: 25%;"/>
