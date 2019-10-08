@@ -5,11 +5,11 @@ class Config {
         this._damage = _damage
         this._delay = null;
     }
-    get senjata (){
-        return this._senjata
+    get delay (){
+        return this._delay
     }
-    set senjata(senjata){
-        this._senjata = senjata
+    set delay(delay){
+        this._delay = delay
     }
     darah(){
         let time = setInterval(() => {
